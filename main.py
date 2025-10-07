@@ -9,7 +9,7 @@ class TestCoinBlock:
         self.block_hash = hashlib.sha256(self.block_data.encode()).hexdigest()
 
 
-t1 = "Nipun sends 2.1 TC to Alice"
+t1 = "Nipun sends 2.2 TC to Alice"
 t2 = "Bob sends 4.1 TC to Alice"
 t3 = "Alice sends 1.2 TC to Bob"
 t4 = "Bob sends 3.2 TC to Nipun"
@@ -23,3 +23,7 @@ print(initial_block.block_hash)
 second_block = TestCoinBlock(initial_block.block_hash, [t3, t4])
 print(second_block.block_data)
 print(second_block.block_hash)
+
+third_block = TestCoinBlock(second_block.block_hash, [t5, t6])
+print(third_block.block_data)
+print(third_block.block_hash)
