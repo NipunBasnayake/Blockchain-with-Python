@@ -3,7 +3,7 @@ import json
 from time import time
 
 class Blockchain(object):
-    def __init__:
+    def __init__(self):
         self.chain=[]
         self.penfing_transactions=[]
     
@@ -40,3 +40,11 @@ class Blockchain(object):
         raw_hash=hashlib.sha256(block_string)
         hex_hash=raw_hash.hexdigest()
         return hex_hash
+    
+    
+blockchain = Blockchain()
+t1 = Blockchain.new_transaction("Nipun","Sahil","10 BTC")
+t2 = Blockchain.new_transaction("Sahil","Nipun","5 BTC")
+blockchain.new_block(12345)
+
+print(Blockchain.chain)
