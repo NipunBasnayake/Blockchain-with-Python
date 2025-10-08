@@ -33,4 +33,10 @@ class Blockchain(object):
         })
         return self.last_block['index']+1
     
-    
+    def hash(self, block):
+        starting_object=json.dumps(block,sort_keys=True)
+        block_string=starting_object.encode()
+
+        raw_hash=hashlib.sha256(block_string)
+        hex_hash=raw_hash.hexdigest()
+        return hex_hash
